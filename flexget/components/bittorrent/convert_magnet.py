@@ -32,7 +32,8 @@ class ConvertMagnet:
     def magnet_to_torrent(self, magnet_uri, destination_folder, timeout):
         import libtorrent
 
-        params = libtorrent.parse_magnet_uri(magnet_uri)
+        params = {}
+        # params = libtorrent.parse_magnet_uri(magnet_uri)
         session = libtorrent.session()
         lt_version = [int(v) for v in libtorrent.version.split('.')]
         if lt_version > [0, 16, 13, 0] and lt_version < [1, 1, 3, 0]:
